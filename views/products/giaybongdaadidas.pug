@@ -1,0 +1,33 @@
+extends ../layouts/common.pug
+block content
+    h1 GIẦY BÓNG ĐÁ ADIDAS
+    .d-flex.align-items-center
+        form.ml-auto(action="/products/search", method="GET" class="d-flex")
+            input(type="text" name="q" class="form-control")
+            button(class="btn btn btn-primary ml-2") Search
+    .row
+        each product in giaybongdaadidas
+            .col-4
+                .card(style='width: 100%')
+                    img.card-img-top(src=product.image)
+                    .card-body
+                        h5.card-title= product.name
+                        p.card-text= product.descripttion
+                        a.btn.btn-primary(href='/cart/add/' + product.id) Add To Cart
+    .d-flex.justify-content-center
+        nav(aria-label='Page navigation example' style='padding-top: 20px')
+            ul.pagination
+                li.page-item
+                    a.page-link(href='#') Previous
+                li.page-item
+                    a.page-link(href='?page=1') 1
+                li.page-item
+                    a.page-link(href='?page=2') 2
+                li.page-item
+                    a.page-link(href='?page=3') 3
+                    li.page-item
+                    a.page-link(href='?page=4') 4
+                    li.page-item
+                    a.page-link(href='?page=5') 5
+                li.page-item
+                    a.page-link(href='#') Next

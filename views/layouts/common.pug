@@ -1,0 +1,127 @@
+html
+    head
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css")
+        link(rel="stylesheet", href="/styles/custom.css")
+    body
+        header
+            nav.navbar.navbar-expand-lg.navbar-light.bg-light
+                a.navbar-brand(href='/' style='color: red; font-weight: bold; font-size: 35px') HAINAM7-SPORT
+                button.navbar-toggler(type='button', data-toggle='collapse',
+                data-target='#navbarSupportedContent',
+                aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+                    span.navbar-toggler-icon
+                #navbarSupportedContent.collapse.navbar-collapse
+                    ul.navbar-nav.mr-auto
+                        li.nav-item.active
+                            a.nav-link(href='/') Home
+                        li.nav-item
+                            .dropdown
+                                a.nav-link(href='/products') Products
+                                .dropdown-content
+                                    a(href='/products/newproducts') Sản phẩm mới
+                                    a(href='/products/saleproducts') Sales off
+                                    a(href='/products/linhkienthethao') Phụ kiện bóng đá 
+                                    a(href='/products/giayfutsal') Giầy Futsal
+                                    a(href='/products/giaynike') Giầy Nike
+                                    a(href='/products/giaybongdaadidas') Giầy Adidas
+                                    a(href='/products/giaypuma') Giầy Puma
+                                    a(href='/products/giaymizuno') Giầy Mizuno
+
+                        li.nav-item
+                            a.nav-link(href='/cart/checkout') Carts(#{qty})
+                            
+                        li.nav-item
+                            a.nav-link(href='/transfer/create') Transfers
+                        if user
+                            li.nav-item
+                                a.nav-link(href='/users') Users
+                if !user
+                    a.btn.btn-primary(href='/auth/login') Login
+                if user
+                    .d-flex.align-items-center
+                        p(style='margin: 0')= user.name
+                        a.btn.btn-danger(href='/auth/logout' style='margin-left: 3px') Logout
+                    
+                    
+            .container
+                block content
+        footer(style='margin-top: 30px; background-color:#222222; padding-top: 20px')
+            .container
+                div(style="display: flex; color: grey" width="100%").footer-top
+                        .col-xs-6.col-sm-4.col-md-4
+                            h4(style="color:red") HỆ THỐNG CỬA HÀNG
+                            h4
+                                | CHI NHANH 1
+                            ul
+                                li Địa chỉ: 43A Điện Biên Phủ, Phường 15, Q. Bình Thạnh
+                                li Số điện thoại bàn: 
+                                a(href='tel:02862713907') 0286.2713.907 ( 9h-21h)
+                            h4
+                                | CHI NHANH 2
+                            ul
+                                li Địa chỉ: 637C Trần Hưng Đạo, Phường 1, Quận 5, TP HCM
+                                li Số điện thoại bàn:
+                                a(href='tel:02822456637') 0282.2456.637 ( 9h-21h)
+                            h4
+                                | CHI NHANH 3
+                            ul
+                                li Địa chỉ: 47 Thống Nhất, P. Bình Thọ, Q. Thủ Đức, TP HCM
+                                li Số điện thoại bàn: 
+                                a(href='tel:02862713504') 0286.2713.504 (9h-21h)
+                        .col-xs-6.col-sm-4.col-md-3
+                            h4 Hỗ trợ
+                            ul#subnav.nav.nav-pills.nav-stacked
+                                li(role='presentation')
+                                a(href='')  Cam kết từ HAINAM7-SPORT
+                                li(role='presentation')
+                                a(href='')  Hướng dẫn chọn size size
+                                li(role='presentation')
+                                a(href='')  Hướng dẫn mua hàng
+                                li(role='presentation')
+                                a(href='')  Quy định đổi hành
+                                li(role='presentation')
+                                a(href='')  Chính sách bảo hành
+                                li(role='presentation')
+                                a(href='')  Chính sách vận chuyển
+                                li(role='presentation')
+                                a(href='')  Chính sách bảo mật
+                                li(role='presentation')
+                                a(href='')  Hệ thống cửa hàng
+                                
+                        .col-xs-12.col-sm-4.col-md-3
+                            h4 Facebook
+                            .face-content
+                                div Place for facebook
+                        .col-xs-12.col-sm-4.col-md-3
+                            h4 Instagram
+                            .face-content
+                                div Place for Instagram 
+                div(style="color: grey; background-color: #111111" ).footer-bottom.pt-10.text-center
+                        .clearfix
+                            .col-lg-12.ecom
+                                .col-lg-4
+                                .nocl
+                                    a(rel='nofollow', target='_blank')
+                                    | Công ty TNHH HAINAM7-SPORT
+                                    br
+                                    | Mã số doang nghiệp : 777777777777
+                                    br
+                                    | 21/04/2020, Nơi cấp : Sở kế hoạch và đầu tư TP.HCM
+                                    br
+                                    | Địa chỉ văn phòng: 43A Điện Biên Phủ, Phường 15, Q. Bình Thạnh
+                                .col-lg-8
+                                .logo-bct(style='margin-left: 15px;')
+                                    a
+                                .logo_footer
+                            .col-md-12.text-center
+                                .footer-copyright
+                                small.copyright
+                                    span
+                                    | &copy; Bản quyền thuộc về 
+                                    b HAINAM7-SPORT
+                                    span.s480-f
+        
+
+
+
+
